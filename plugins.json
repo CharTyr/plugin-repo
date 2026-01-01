@@ -359,10 +359,12 @@
     "id": "XXXxx7258.Mai_Only_You",
     "repositoryUrl": "https://github.com/XXXxx7258/Mai_Only_You"
   },
-  {"id": "heitiehu-beep.date_aware_plugin",
+  {
+    "id": "heitiehu-beep.date_aware_plugin",
     "repositoryUrl": "https://github.com/heitiehu-beep/date_aware_plugin"
   }  
 ]
+
 
 
 
