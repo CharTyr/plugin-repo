@@ -1296,7 +1296,7 @@
       "manifest_version": 1,
       "name": "戳一戳插件",
       "display_name": "戳一戳插件",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "description": "全新重构的戳一戳插件，做到真正的装载即用！一个主动发起“戳一戳”的 MaiMai 插件，主动发起戳一戳，增添群聊乐趣。",
       "author": {
         "name": "何夕",
@@ -1802,7 +1802,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "麦麦发B站视频",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "description": "让麦麦解析b站视频链接并发送，群聊私聊都可用",
       "author": {
         "name": "XinxInxiN0",
@@ -5023,6 +5023,25 @@
         ]
       },
       "id": "XXXxx7258.Mai_Only_You"
+    }
+  },
+  {
+    "id": "rand0mdevel0per.pgvec_mem_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "PgVector 记忆插件",
+      "version": "1.0.0",
+      "description": "一个使用 PostgreSQL & PgVector Plugin 数据库存储和检索记忆的插件。",
+      "author": {
+        "name": "rand0mdevel0per",
+        "url": "https://github.com/rand0mdevel0per"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.0.0",
+        "max_version": "9.0.0"
+      },
+      "repository_url": "https://github.com/rand0mdevel0per/MaiVecMem.git"
     }
   }
 ]
