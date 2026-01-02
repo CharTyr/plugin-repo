@@ -362,8 +362,9 @@
   {
     "id": "rand0mdevel0per.pgvec_mem_plugin",
     "repositoryUrl": "https://github.com/rand0mdevel0per/MaiVecMem"
+  },
+  {
+    "id": "heitiehu-beep.date_aware_plugin",
+    "repositoryUrl": "https://github.com/heitiehu-beep/date_aware_plugin"
   }
 ]
-
-
-
