@@ -437,7 +437,7 @@
         "Accessibility"
       ],
       "host_application": {
-        "min_version": "0.11.0"
+        "min_version": "0.12.0"
       },
       "default_locale": "zh-CN",
       "plugin_info": {
@@ -2830,7 +2830,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.5.2",
+      "version": "1.6.0",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -4381,7 +4381,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "印象和好感度系统插件",
-      "version": "2.3.4",
+      "version": "2.3.5",
       "description": "为麦麦添加动态印象和好感度系统，LLM生成自然语言印象和动态好感度更新，使用独立的impression_affection_data.db数据库",
       "author": {
         "name": "heitiehu-beep",
@@ -5062,7 +5062,7 @@
       },
       "license": "MIT License",
       "host_application": {
-        "min_version": "1.11.6"
+        "min_version": "0.11.6"
       },
       "homepage_url": "https://github.com/WaterInk0101/groupsign",
       "repository_url": "https://github.com/WaterInk0101/groupsign",
