@@ -2830,7 +2830,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.0",
+      "version": "1.6.1",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -4625,7 +4625,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Mai Forever Memories",
-      "version": "0.1.3",
+      "version": "0.2.0",
       "description": "将你与麦麦日常生活中的一点一滴保存为永恒的记忆，记录到LPMM中",
       "author": {
         "name": "ARC",
@@ -4683,6 +4683,8 @@
           "每日/每周摘要",
           "永远记忆触发",
           "导入 LPMM 知识库",
+          "只总结不导入模式",
+          "确认导入机制",
           "性能监控与管理员告警"
         ]
       },
