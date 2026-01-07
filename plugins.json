@@ -313,7 +313,7 @@
   },
   {
     "id": "pulsarmatrix.servercmd_plugin",
-    "repositoryUrl":"https://github.com/pulsarmatrix/servercmd_plugin"
+    "repositoryUrl": "https://github.com/pulsarmatrix/servercmd_plugin"
   },
   {
     "id": "Rabbit-Jia-Er.mai_clinic_plugin",
@@ -352,7 +352,7 @@
     "repositoryUrl": "https://github.com/ThelevenFD/wait_remover"
   },
   {
-    "id": "Alvter.repeat_content_plugin", 
+    "id": "Alvter.repeat_content_plugin",
     "repositoryUrl": "https://github.com/Alvter/repeat_content_plugin"
   },
   {
@@ -382,6 +382,9 @@
   {
     "id": "WaterInk0101.proactive_private_chat",
     "repositoryUrl": "https://github.com/WaterInk0101/proactive_private_chat"
+  },
+  {
+    "id": "HyperSharkawa.like_plugin",
+    "repositoryUrl": "https://github.com/HyperSharkawa/like_plugin"
   }
 ]
-
