@@ -1243,7 +1243,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Maizone（麦麦空间）",
-      "version": "2.4.11",
+      "version": "2.4.12",
       "description": "让你的麦麦发QQ空间，评论，点赞",
       "author": {
         "name": "internetsb",
@@ -5110,7 +5110,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "今日老婆",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "今天你的群老婆是谁呢",
       "author": {
         "name": "梦清",
@@ -5129,7 +5129,8 @@
       ],
       "categories": [
         "Entertainment & Interaction"
-      ]
+      ],
+      "id": "AkariRin.jrlp"
     }
   },
   {
@@ -5182,7 +5183,7 @@
       },
       "license": "MIT License",
       "host_application": {
-        "min_version": "1.11.6"
+        "min_version": "0.11.6"
       },
       "homepage_url": "https://github.com/WaterInk0101/proactive_private_chat",
       "repository_url": "https://github.com/WaterInk0101/proactive_private_chat",
@@ -5196,6 +5197,31 @@
       "categories": [
         "Entertainment & Interaction"
       ]
+    }
+  },
+  {
+    "id": "HyperSharkawa.like_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦赞我",
+      "version": "1.0.0",
+      "description": "让麦麦能给你点赞",
+      "author": {
+        "name": "鲨鱼",
+        "url": "https://github.com/HyperSharkawa"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.5"
+      },
+      "homepage_url": "https://github.com/HyperSharkawa/like_plugin",
+      "repository_url": "https://github.com/HyperSharkawa/like_plugin",
+      "keywords": [
+        "点赞",
+        "互动"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales"
     }
   }
 ]
