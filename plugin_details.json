@@ -2830,7 +2830,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.1",
+      "version": "1.6.2",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -5110,7 +5110,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "今日老婆",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "description": "今天你的群老婆是谁呢",
       "author": {
         "name": "梦清",
@@ -5222,6 +5222,33 @@
       ],
       "default_locale": "zh-CN",
       "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "heitiehu-beep.prompt_injection_guard",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "提示词注入防护插件",
+      "version": "1.0.0",
+      "description": "防御提示词注入攻击，支持规则检测和 LLM 检测",
+      "author": {
+        "name": "heitiehu-beep",
+        "url": "https://github.com/heitiehu-beep"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.0"
+      },
+      "repository_url": "https://github.com/heitiehu-beep/prompt_injection_guard",
+      "keywords": [
+        "安全",
+        "提示词注入",
+        "防护",
+        "越狱防御"
+      ],
+      "categories": [
+        "工具"
+      ]
     }
   }
 ]
