@@ -388,7 +388,12 @@
     "repositoryUrl": "https://github.com/HyperSharkawa/like_plugin"
   },
   {
+    "id": "heitiehu-beep.prompt_injection_guard",
+    "repositoryUrl": "https://github.com/heitiehu-beep/prompt_injection_guard"
+  },
+  {
     "id": "AkariRin.drift-bottle",
     "repositoryUrl": "https://github.com/AkariRin/drift-bottle-plugin"
   }
+
 ]
