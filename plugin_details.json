@@ -5250,5 +5250,31 @@
         "工具"
       ]
     }
+  },
+  {
+    "id": "AkariRin.drift-bottle",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "漂流瓶",
+      "version": "1.1.1",
+      "description": "扔漂流瓶、捡漂流瓶，跨群传递消息的互动插件",
+      "author": {
+        "name": "梦清",
+        "url": "https://github.com/AkariRin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.12.1"
+      },
+      "homepage_url": "https://github.com/AkariRin/drift-bottle-plugin",
+      "repository_url": "https://github.com/AkariRin/drift-bottle-plugin",
+      "keywords": [
+        "漂流瓶"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "id": "AkariRin.drift-bottle"
+    }
   }
 ]
