@@ -394,6 +394,9 @@
   {
     "id": "AkariRin.drift-bottle",
     "repositoryUrl": "https://github.com/AkariRin/drift-bottle-plugin"
+  },
+  {
+    "id": "mmmpipi.MaiBot-DetailedReason-Plugin",
+    "repositoryUrl": "https://github.com/mmmpipi/MaiBot-DetailedReason-Plugin"
   }
-
 ]
