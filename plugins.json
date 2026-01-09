@@ -396,6 +396,10 @@
     "repositoryUrl": "https://github.com/AkariRin/drift-bottle-plugin"
   },
   {
+    "id": "AkariRin.duoshe",
+    "repositoryUrl": "https://github.com/AkariRin/duoshe-plugin"
+  },
+  {
     "id": "mmmpipi.MaiBot-DetailedReason-Plugin",
     "repositoryUrl": "https://github.com/mmmpipi/MaiBot-DetailedReason-Plugin"
   }

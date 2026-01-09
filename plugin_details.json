@@ -2830,7 +2830,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.2",
+      "version": "1.6.3",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -5275,6 +5275,33 @@
         "Entertainment & Interaction"
       ],
       "id": "AkariRin.drift-bottle"
+    }
+  },
+  {
+    "id": "AkariRin.duoshe",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "夺舍",
+      "version": "1.0.0",
+      "description": "偷取群友的ID",
+      "author": {
+        "name": "梦清",
+        "url": "https://github.com/AkariRin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.12.1"
+      },
+      "homepage_url": "https://github.com/AkariRin/duoshe-plugin",
+      "repository_url": "https://github.com/AkariRin/duoshe-plugin",
+      "keywords": [
+        "夺舍",
+        "群名片"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "id": "AkariRin.duoshe"
     }
   }
 ]
