@@ -394,6 +394,10 @@
   {
     "id": "AkariRin.drift-bottle",
     "repositoryUrl": "https://github.com/AkariRin/drift-bottle-plugin"
+  },
+  {
+    "id": "AkariRin.duoshe",
+    "repositoryUrl": "https://github.com/AkariRin/duoshe-plugin"
   }
 
 ]
