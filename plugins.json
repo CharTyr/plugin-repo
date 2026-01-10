@@ -402,5 +402,9 @@
   {
     "id": "mmmpipi.MaiBot-DetailedReason-Plugin",
     "repositoryUrl": "https://github.com/mmmpipi/MaiBot-DetailedReason-Plugin"
+  },
+  {
+    "id": "ARC.A_Mind",
+    "repositoryUrl": "https://github.com/A-Dawn/A_Mind"
   }
 ]
