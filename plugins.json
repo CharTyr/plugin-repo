@@ -406,5 +406,9 @@
   {
     "id": "ARC.A_Mind",
     "repositoryUrl": "https://github.com/A-Dawn/A_Mind"
+  },
+  {
+    "id": "dglab_coyote_plugin",
+    "repositoryUrl": "https://github.com/exynos967/dglab_coyote_plugin"
   }
 ]
