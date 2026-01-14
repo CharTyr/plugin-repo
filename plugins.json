@@ -406,5 +406,9 @@
   {
     "id": "ARC.A_Mind",
     "repositoryUrl": "https://github.com/A-Dawn/A_Mind"
+  },
+  {
+    "id": "nguspring.custom_pic_plugin",
+    "repositoryUrl": "https://github.com/nguspring/custom_pic_plugin_test-version"
   }
 ]
