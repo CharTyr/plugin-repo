@@ -406,5 +406,9 @@
   {
     "id": "ARC.A_Mind",
     "repositoryUrl": "https://github.com/A-Dawn/A_Mind"
+  },
+  {
+    "id": "yunchenqwq.easytts_pugin",
+    "repositoryUrl": "https://github.com/YunChenqwq/EasyttsPlugin"
   }
 ]
