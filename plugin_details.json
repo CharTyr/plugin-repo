@@ -2827,7 +2827,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.4",
+      "version": "1.6.6",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -4278,7 +4278,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "抽群老婆插件",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "可以在群聊中选择一位幸运群u做群老婆~",
       "author": {
         "name": "Hug_Yo",
@@ -4404,7 +4404,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "戳一戳插件",
-      "version": "1.2.0",
+      "version": "1.2.2",
       "description": "让麦麦能主动戳别人，也能在被戳时回戳并生成自然回复",
       "author": {
         "name": "鲨鱼",
@@ -5434,6 +5434,214 @@
         ]
       },
       "id": "ARC.A_Mind"
+    }
+  },
+  {
+    "id": "sansenjian.quick_poke",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "quick_poke",
+      "display_name": "简单的戳一戳插件",
+      "version": "1.1.2",
+      "description": "MaiBot 戳一戳插件，支持自动回戳、LLM 文字回复、跟戳功能，可配置触发概率。",
+      "author": {
+        "name": "sansenjian",
+        "url": "https://github.com/sansenjian/quick-poke"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.1"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/sansenjian/quick-poke",
+      "repository_url": "https://github.com/sansenjian/quick-poke",
+      "keywords": [
+        "poke",
+        "戳一戳",
+        "QQ",
+        "互动",
+        "插件"
+      ],
+      "categories": [
+        "Fun",
+        "Interaction"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "chat",
+        "components": [
+          {
+            "type": "handler",
+            "name": "PokeEventHandler",
+            "description": "戳一戳事件处理器，自动回戳和生成 LLM 文字回复"
+          },
+          {
+            "type": "action",
+            "name": "PokeAction",
+            "description": "戳一戳动作，供 AI 主动戳人"
+          }
+        ],
+        "features": [
+          "自动回戳",
+          "LLM 文字回复",
+          "跟戳",
+          "概率触发"
+        ]
+      },
+      "id": "sansenjian.quick_poke"
+    }
+  },
+  {
+    "id": "yunchenqwq.easy_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "EasyPlugin 语音合成插件（云端仓库池）",
+      "version": "0.1.0",
+      "description": "基于 GPT-SoVITS 推理特化库（Genie-TTS / GPT-SoVITS ONNX 推理引擎）与魔搭社区（ModelScope Studio）免费托管的语音合成插件，支持按情绪/预设生成语音（emotion 参数直接等同 preset，不做任何映射）以及云端仓库池自动切换。",
+      "author": {
+        "name": "yunchenqwq",
+        "url": "https://github.com/YunChenqwq"
+      },
+      "license": "AGPL-v3.0",
+      "host_application": {
+        "min_version": "0.11.0"
+      },
+      "homepage_url": "https://github.com/YunChenqwq/EasyttsPlugin",
+      "repository_url": "https://github.com/YunChenqwq/EasyttsPlugin",
+      "keywords": [
+        "tts",
+        "voice",
+        "gpt-sovits",
+        "genie-tts",
+        "gradio",
+        "modelscope",
+        "ms.show",
+        "napcat",
+        "emotion",
+        "preset"
+      ],
+      "categories": [
+        "Entertainment",
+        "Voice",
+        "TTS"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "plugin_type": "general",
+        "components": [
+          {
+            "type": "action",
+            "name": "unified_tts_action",
+            "description": "关键词触发自动语音回复（easytts 仓库池）。"
+          },
+          {
+            "type": "command",
+            "name": "unified_tts_command",
+            "description": "手动 /eztts 转语音（easytts 仓库池）。"
+          }
+        ],
+        "dependencies": {
+          "python": [
+            "aiohttp"
+          ],
+          "system": [],
+          "plugins": []
+        }
+      },
+      "configuration": {
+        "config_file": "config.toml",
+        "config_template": "config.toml.example",
+        "auto_generate": true
+      },
+      "id": "yunchenqwq.easy_plugin"
+    }
+  },
+  {
+    "id": "nguspring.custom_pic_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "自定义智能多模型图片生成插件（custom_pic_plugin）",
+      "version": "3.4.1",
+      "description": "智能多模型图片生成插件，支持文生图和图生图自动识别。兼容OpenAI、豆包、Gemini、魔搭等多种API格式。提供命令式风格转换、模型配置管理、结果缓存等功能。支持动态模型切换、风格别名、调试开关、智能参考搜索（内置搜索引擎）等高级特性。内置7个魔搭模型预设。本插件完全符合 MaiBot 插件开发标准。",
+      "author": {
+        "name": "Ptrel，Rabbit-Jia-Er，saberlights Kiuon，nguspring",
+        "url": "https://github.com/nguspring/custom_pic_plugin"
+      },
+      "license": "AGPL-3.0",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/nguspring/custom_pic_plugin",
+      "repository_url": "https://github.com/nguspring/custom_pic_plugin",
+      "keywords": [
+        "画图",
+        "表情",
+        "AI",
+        "图片",
+        "魔搭"
+      ],
+      "categories": [
+        "Content Generation",
+        "Entertainment & Interaction"
+      ],
+      "default_locale": "zh-CN",
+      "locales_path": "_locales",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "image_generator",
+        "components": [
+          {
+            "type": "action",
+            "name": "draw_picture",
+            "description": "智能图片生成，自动��别文生图/图生图",
+            "activation_modes": [
+              "keyword",
+              "llm_judge"
+            ],
+            "keywords": [
+              "画",
+              "绘制",
+              "生成图片",
+              "画图",
+              "图生图",
+              "修改图片",
+              "风格转换"
+            ]
+          },
+          {
+            "type": "command",
+            "name": "pic_generation_command",
+            "description": "风格化图生图命令：/dr <风格>",
+            "pattern": "/dr"
+          },
+          {
+            "type": "command",
+            "name": "pic_config_command",
+            "description": "模型配置管理：/dr list、/dr set等",
+            "pattern": "/dr"
+          },
+          {
+            "type": "command",
+            "name": "pic_style_command",
+            "description": "风格管理：/dr styles、/dr style等",
+            "pattern": "/dr"
+          }
+        ],
+        "features": [
+          "智能文生图/图生图识别",
+          "多API格式支持(OpenAI/豆包/Gemini/魔搭)",
+          "命令式风格转换",
+          "动态模型配置管理",
+          "风格别名系统",
+          "结果缓存机制",
+          "调试开关控制",
+          "支持图生图开关",
+          "智能参考搜索功能（内置Bing搜图）",
+          "自拍模式标准/对镜双模式负面提示词",
+          "内置7个魔搭模型预设"
+        ]
+      }
     }
   }
 ]
