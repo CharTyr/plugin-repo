@@ -2827,7 +2827,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.4",
+      "version": "1.6.6",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
       "author": {
         "name": "sakura桜花",
@@ -4404,7 +4404,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "戳一戳插件",
-      "version": "1.2.0",
+      "version": "1.2.2",
       "description": "让麦麦能主动戳别人，也能在被戳时回戳并生成自然回复",
       "author": {
         "name": "鲨鱼",
@@ -5434,6 +5434,62 @@
         ]
       },
       "id": "ARC.A_Mind"
+    }
+  },
+  {
+    "id": "sansenjian.quick_poke",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "quick_poke",
+      "display_name": "简单的戳一戳插件",
+      "version": "1.1.2",
+      "description": "MaiBot 戳一戳插件，支持自动回戳、LLM 文字回复、跟戳功能，可配置触发概率。",
+      "author": {
+        "name": "sansenjian",
+        "url": "https://github.com/sansenjian/quick-poke"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.1"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/sansenjian/quick-poke",
+      "repository_url": "https://github.com/sansenjian/quick-poke",
+      "keywords": [
+        "poke",
+        "戳一戳",
+        "QQ",
+        "互动",
+        "插件"
+      ],
+      "categories": [
+        "Fun",
+        "Interaction"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "chat",
+        "components": [
+          {
+            "type": "handler",
+            "name": "PokeEventHandler",
+            "description": "戳一戳事件处理器，自动回戳和生成 LLM 文字回复"
+          },
+          {
+            "type": "action",
+            "name": "PokeAction",
+            "description": "戳一戳动作，供 AI 主动戳人"
+          }
+        ],
+        "features": [
+          "自动回戳",
+          "LLM 文字回复",
+          "跟戳",
+          "概率触发"
+        ]
+      },
+      "id": "sansenjian.quick_poke"
     }
   }
 ]
