@@ -426,5 +426,9 @@
   {
     "id": "SkonJIYHD.LifeSimulationPlugin",
     "repositoryUrl": "https://github.com/SkonJIYHD/LifeSimulationPlugin"
+  },
+  {
+    "id": "dglab_coyote_plugin",
+    "repositoryUrl": "https://github.com/exynos967/dglab_coyote_plugin"
   }
 ]
