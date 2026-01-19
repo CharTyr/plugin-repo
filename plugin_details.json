@@ -2827,8 +2827,8 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.6",
-      "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。",
+      "version": "1.6.9",
+      "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。（现已支持视频生成）",
       "author": {
         "name": "sakura桜花",
         "url": "https://github.com/namchengwuqiu"
@@ -6085,6 +6085,35 @@
         ]
       },
       "id": "sansenjian.quick_repeat"
+    }
+  },
+  {
+    "id": "checkin_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "QQ自动群打卡插件",
+      "version": "1.0.10",
+      "description": "自动调用napcat接口获取群列表，实现批量群打卡，无命令触发，配置生效",
+      "author": {
+        "name": "miantaoo",
+        "url": "https://github.com/miantaoo"
+      },
+      "license": "GPL-3.0",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/miantaoo/checkin_plugin",
+      "repository_url": "https://github.com/miantaoo/checkin_plugin",
+      "keywords": [
+        "签到",
+        "自动签到",
+        "checkin",
+        "自动化"
+      ],
+      "categories": [
+        "Utility Tools",
+        "External Integration"
+      ]
     }
   }
 ]
