@@ -6115,5 +6115,34 @@
         "External Integration"
       ]
     }
+  },
+  {
+    "id": "poncianopadolcg658-byte.maibot-video-generation",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "doubao_video_generator",
+      "version": "1.0.0",
+      "description": "使用豆包API生成视频，支持多种视频参数配置",
+      "author": {
+        "name": "帕朵",
+        "url": "https://github.com/poncianopadolcg658-byte"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.6"
+      },
+      "homepage_url": "https://github.com/poncianopadolcg658-byte/maimaidoubao",
+      "repository_url": "https://github.com/poncianopadolcg658-byte/maimaidoubao",
+      "keywords": [
+        "视频生成",
+        "豆包"
+      ],
+      "categories": [
+        "Content Generation",
+        "Multimedia"
+      ],
+      "default_locale": "CN",
+      "locales_path": "_locales"
+    }
   }
 ]
