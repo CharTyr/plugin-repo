@@ -438,5 +438,10 @@
   {
     "id": "checkin_plugin",
     "repositoryUrl": "https://github.com/miantaoo/checkin_plugin"
+  },
+  {
+    "id": "poncianopadolcg658-byte.maibot-video-generation",
+    "repositoryUrl": "https://github.com/poncianopadolcg658-byte/maimaidoubao"
   }
 ]
+
