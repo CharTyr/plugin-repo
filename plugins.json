@@ -454,9 +454,10 @@
   {
     "id": "FoolOyster.mai-video-plugin",
     "repositoryUrl": "https://github.com/FoolOyster/mai-video-plugin"
+  },
+  {
+    "id": "HyperSharkawa.msg_react_plugin",
+    "repositoryUrl": "https://github.com/HyperSharkawa/maibot-msg-react-plugin"
   }
 ]
-
-
-
 
