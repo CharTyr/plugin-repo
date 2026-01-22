@@ -1752,47 +1752,46 @@
     "id": "whitefox20011120.bilibili_dynamic_push_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "B站动态推送插件",
-      "version": "1.3.0",
-      "description": "定时检测B站UP主动态并推送到指定QQ群（跳过置顶、支持多UID/多群、启动日志提示）。",
+      "name": "bilibili_dynamic_push",
+      "version": "1.0.0",
+      "description": "基于MaiBot的B站动态订阅插件，支持多UP主、多群组推送，自动解析图文、视频封面及转发动态",
       "author": {
         "name": "白狐",
-        "url": "https://github.com/whitefox20011120"
+        "url": ""
       },
-      "license": "AGPL-3.0",
+      "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0"
+        "min_version": "0.10.0"
       },
-      "homepage_url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin",
-      "repository_url": "",
-      "config_file_name": "config.toml",
       "keywords": [
         "bilibili",
-        "动态",
-        "自动推送",
-        "UP主",
-        "QQ"
+        "动态订阅",
+        "推送",
+        "监控",
+        "UP主"
       ],
       "categories": [
         "automation",
-        "bilibili",
-        "push",
-        "Utility Tools"
+        "entertainment",
+        "utility"
       ],
+      "repository_url": "",
       "default_locale": "zh-CN",
       "plugin_info": {
         "is_built_in": false,
         "components": [
           {
-            "type": "action",
-            "name": "auto_push",
-            "description": "自动监控UP主动态并推送到QQ群"
+            "type": "command",
+            "name": "bili_control",
+            "description": "B站订阅插件"
           }
         ]
       },
       "python_dependencies": [
+        "bilibili-api-python>=16.2.0",
         "aiohttp"
-      ]
+      ],
+      "id": "MaiBotUser.bilibili_dynamic_subscription"
     }
   },
   {
@@ -2827,7 +2826,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.7.1",
+      "version": "1.7.6",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。（现已支持视频生成）",
       "author": {
         "name": "sakura桜花",
@@ -2840,13 +2839,10 @@
       "homepage_url": "https://github.com/namchengwuqiu/gemini_drawer",
       "repository_url": "https://github.com/namchengwuqiu/gemini_drawer",
       "keywords": [
-        "gemini",
-        "image",
-        "drawing",
-        "ai",
+        "ai画图",
         "绘图",
-        "画图",
-        "视频生成"
+        "ai视频生成",
+        "image"
       ],
       "categories": [
         "Utilities",
@@ -5846,7 +5842,23 @@
           "Enhanced get_life_simulation_status tool to display date information",
           "Now shows yesterday, today, tomorrow, and day after tomorrow dates",
           "Date display format: '昨天 | 1月17日 星期六'",
-          "Improved time display clarity and user experience"
+          "Improved time display clarity and user experience",
+          "Added _generate_with_retry method for robust LLM JSON parsing with automatic retry",
+          "Enhanced _generate_with_retry method with robust JSON parsing: regex extraction for handling AI-wrapped JSON responses",
+          "Added Chinese punctuation replacement in JSON cleaning (，：；！？（）【】｛｝等 → ,:;!?()[]{}etc.) to handle LLM output with Chinese punctuation",
+          "Added dynamic max_tokens calculation for schedule generation to prevent JSON truncation (auto-adjusts to 3500 tokens for 15 activities)",
+          "Fixed SocialNetworkDB initialization: now ensures parent directory exists before creating database file",
+          "Replaced manual JSON parsing logic in _judge_intimacy_increase with new retry mechanism",
+          "Enhanced GetSocialNetworkTool to support user_name lookup in addition to user_id",
+          "Enhanced SetRelationshipTool to support user_name lookup in addition to user_id",
+          "Fixed missing Union type import in typing imports",
+          "Fixed MessageSleepEventHandler bot_id detection: now uses message.message_base_info.get('self_id')",
+          "Fixed MessageSleepEventHandler schedule sync: now bidirectionally syncs with schedule (enters sleep when schedule is sleep, wakes up when schedule is not sleep)",
+          "Sleep handler now properly wakes up when current activity changes from sleep to non-sleep activities",
+          "Fixed cross-day time range handling in schedule system",
+          "Updated schedule_generation prompt to allow cross-day sleep schedules",
+          "Cleaned up duplicate requirements in schedule_generation prompt",
+          "Fixed numbering in default config prompt's 'Notes' section (1-10 sequential)"
         ],
         "1.6.0": [
           "Fixed tool parameter format for GetSocialNetworkTool and SetRelationshipTool",
@@ -6151,7 +6163,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "A_Memorix",
-      "version": "0.1.1",
+      "version": "0.1.3",
       "description": "轻量级知识库插件 - 基于双路检索的完全独立的记忆增强系统，优化低资源环境下的知识存储与检索",
       "author": {
         "name": "A_Dawn",
@@ -6420,6 +6432,68 @@
         "optional": []
       },
       "id": "A_Dawn.A_memorix"
+    }
+  },
+  {
+    "id": "wentaoxian6-svg.MaiBot-rule_horror_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "规则怪谈插件",
+      "version": "1.5",
+      "description": "生成规则怪谈并进行互动游戏，支持LLM生成、提示、推理和多种结局判定",
+      "author": {
+        "name": "岚影鸿夜",
+        "url": "https://github.com/wentaoxian6-svg"
+      },
+      "license": "MIT",
+      "homepage_url": "https://github.com/wentaoxian6-svg/MaiBot-rule_horror_plugin",
+      "repository_url": "https://github.com/wentaoxian6-svg/MaiBot-rule_horror_plugin",
+      "host_application": {
+        "min_version": "0.12.2"
+      },
+      "keywords": [
+        "规则怪谈",
+        "游戏",
+        "LLM",
+        "互动",
+        "推理"
+      ],
+      "categories": [
+        "Entertainment & Interaction",
+        "Content Generation"
+      ],
+      "id": "wentaoxian6-svg.MaiBot-rule_horror_plugin"
+    }
+  },
+  {
+    "id": "FoolOyster.mai-video-plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "视频生成插件(mai-video-plugin)",
+      "version": "0.1.0",
+      "description": "兼容 多种视频生成模型 API 的麦麦视频生成插件，支持文生视频与图生视频，仅支持QQ平台",
+      "author": {
+        "name": "Fooloyster",
+        "url": "https://github.com/FoolOyster/mai-video-plugin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/FoolOyster/mai-video-plugin",
+      "repository_url": "https://github.com/FoolOyster/mai-video-plugin",
+      "keywords": [
+        "video",
+        "ai",
+        "multimedia"
+      ],
+      "categories": [
+        "Video",
+        "Multimedia",
+        "Entertainment"
+      ],
+      "default_locale": "CN",
+      "locales_path": "_locales"
     }
   }
 ]
