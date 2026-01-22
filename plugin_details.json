@@ -1752,47 +1752,46 @@
     "id": "whitefox20011120.bilibili_dynamic_push_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "B站动态推送插件",
-      "version": "1.3.0",
-      "description": "定时检测B站UP主动态并推送到指定QQ群（跳过置顶、支持多UID/多群、启动日志提示）。",
+      "name": "bilibili_dynamic_push",
+      "version": "1.0.0",
+      "description": "基于MaiBot的B站动态订阅插件，支持多UP主、多群组推送，自动解析图文、视频封面及转发动态",
       "author": {
         "name": "白狐",
-        "url": "https://github.com/whitefox20011120"
+        "url": ""
       },
-      "license": "AGPL-3.0",
+      "license": "MIT",
       "host_application": {
-        "min_version": "0.9.0"
+        "min_version": "0.10.0"
       },
-      "homepage_url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin",
-      "repository_url": "",
-      "config_file_name": "config.toml",
       "keywords": [
         "bilibili",
-        "动态",
-        "自动推送",
-        "UP主",
-        "QQ"
+        "动态订阅",
+        "推送",
+        "监控",
+        "UP主"
       ],
       "categories": [
         "automation",
-        "bilibili",
-        "push",
-        "Utility Tools"
+        "entertainment",
+        "utility"
       ],
+      "repository_url": "",
       "default_locale": "zh-CN",
       "plugin_info": {
         "is_built_in": false,
         "components": [
           {
-            "type": "action",
-            "name": "auto_push",
-            "description": "自动监控UP主动态并推送到QQ群"
+            "type": "command",
+            "name": "bili_control",
+            "description": "B站订阅插件"
           }
         ]
       },
       "python_dependencies": [
+        "bilibili-api-python>=16.2.0",
         "aiohttp"
-      ]
+      ],
+      "id": "MaiBotUser.bilibili_dynamic_subscription"
     }
   },
   {
@@ -2827,7 +2826,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.6.9",
+      "version": "1.7.6",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。（现已支持视频生成）",
       "author": {
         "name": "sakura桜花",
@@ -2840,12 +2839,10 @@
       "homepage_url": "https://github.com/namchengwuqiu/gemini_drawer",
       "repository_url": "https://github.com/namchengwuqiu/gemini_drawer",
       "keywords": [
-        "gemini",
-        "image",
-        "drawing",
-        "ai",
+        "ai画图",
         "绘图",
-        "画图"
+        "ai视频生成",
+        "image"
       ],
       "categories": [
         "Utilities",
@@ -5845,7 +5842,23 @@
           "Enhanced get_life_simulation_status tool to display date information",
           "Now shows yesterday, today, tomorrow, and day after tomorrow dates",
           "Date display format: '昨天 | 1月17日 星期六'",
-          "Improved time display clarity and user experience"
+          "Improved time display clarity and user experience",
+          "Added _generate_with_retry method for robust LLM JSON parsing with automatic retry",
+          "Enhanced _generate_with_retry method with robust JSON parsing: regex extraction for handling AI-wrapped JSON responses",
+          "Added Chinese punctuation replacement in JSON cleaning (，：；！？（）【】｛｝等 → ,:;!?()[]{}etc.) to handle LLM output with Chinese punctuation",
+          "Added dynamic max_tokens calculation for schedule generation to prevent JSON truncation (auto-adjusts to 3500 tokens for 15 activities)",
+          "Fixed SocialNetworkDB initialization: now ensures parent directory exists before creating database file",
+          "Replaced manual JSON parsing logic in _judge_intimacy_increase with new retry mechanism",
+          "Enhanced GetSocialNetworkTool to support user_name lookup in addition to user_id",
+          "Enhanced SetRelationshipTool to support user_name lookup in addition to user_id",
+          "Fixed missing Union type import in typing imports",
+          "Fixed MessageSleepEventHandler bot_id detection: now uses message.message_base_info.get('self_id')",
+          "Fixed MessageSleepEventHandler schedule sync: now bidirectionally syncs with schedule (enters sleep when schedule is sleep, wakes up when schedule is not sleep)",
+          "Sleep handler now properly wakes up when current activity changes from sleep to non-sleep activities",
+          "Fixed cross-day time range handling in schedule system",
+          "Updated schedule_generation prompt to allow cross-day sleep schedules",
+          "Cleaned up duplicate requirements in schedule_generation prompt",
+          "Fixed numbering in default config prompt's 'Notes' section (1-10 sequential)"
         ],
         "1.6.0": [
           "Fixed tool parameter format for GetSocialNetworkTool and SetRelationshipTool",
@@ -6142,6 +6155,373 @@
         "Multimedia"
       ],
       "default_locale": "CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "A-Dawn.A_memorix",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "A_Memorix",
+      "version": "0.1.3",
+      "description": "轻量级知识库插件 - 基于双路检索的完全独立的记忆增强系统，优化低资源环境下的知识存储与检索",
+      "author": {
+        "name": "A_Dawn",
+        "url": "https://github.com/A-Dawn"
+      },
+      "license": "AGPL-3.0",
+      "repository_url": "https://github.com/A-Dawn/A_memorix/",
+      "host_application": {
+        "min_version": "0.12.1"
+      },
+      "keywords": [
+        "知识库",
+        "记忆",
+        "检索",
+        "向量存储",
+        "知识图谱"
+      ],
+      "categories": [
+        "Utility Tools",
+        "Data Analysis & Insights"
+      ],
+      "required_plugins": [],
+      "config_schema": {
+        "storage": {
+          "data_dir": {
+            "type": "string",
+            "default": "./plugins/A_memorix/data",
+            "description": "知识库数据目录"
+          }
+        },
+        "embedding": {
+          "dimension": {
+            "type": "integer",
+            "default": 384,
+            "description": "嵌入向量维度"
+          },
+          "quantization_type": {
+            "type": "string",
+            "default": "int8",
+            "enum": [
+              "float32",
+              "int8",
+              "pq"
+            ],
+            "description": "向量量化类型"
+          },
+          "batch_size": {
+            "type": "integer",
+            "default": 32,
+            "description": "批量生成嵌入的批次大小"
+          },
+          "max_concurrent": {
+            "type": "integer",
+            "default": 5,
+            "description": "嵌入API最大并发请求数"
+          },
+          "model_name": {
+            "type": "string",
+            "default": "auto",
+            "description": "指定嵌入模型名称 (对应 model_config.toml 中的 name)"
+          }
+        },
+        "retrieval": {
+          "top_k_relations": {
+            "type": "integer",
+            "default": 10,
+            "description": "关系检索返回数量"
+          },
+          "top_k_paragraphs": {
+            "type": "integer",
+            "default": 20,
+            "description": "段落检索返回数量"
+          },
+          "alpha": {
+            "type": "number",
+            "default": 0.5,
+            "description": "双路检索融合权重 (0:仅关系, 1:仅段落)"
+          },
+          "enable_ppr": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否启用 Personalized PageRank 重排序"
+          },
+          "ppr_alpha": {
+            "type": "number",
+            "default": 0.85,
+            "description": "PPR 的 alpha 参数"
+          },
+          "ppr_concurrency_limit": {
+            "type": "integer",
+            "default": 4,
+            "description": "PPR 计算的最大并发数（防止 CPU 过载）"
+          },
+          "enable_parallel": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否启用并行检索"
+          }
+        },
+        "threshold": {
+          "min_threshold": {
+            "type": "number",
+            "default": 0.3,
+            "description": "搜索结果的最小阈值"
+          },
+          "max_threshold": {
+            "type": "number",
+            "default": 0.95,
+            "description": "搜索结果的最大阈值"
+          },
+          "percentile": {
+            "type": "number",
+            "default": 75,
+            "description": "动态阈值的分位数"
+          },
+          "std_multiplier": {
+            "type": "number",
+            "default": 1.5,
+            "description": "标准差倍数（用于异常值过滤）"
+          },
+          "min_results": {
+            "type": "integer",
+            "default": 3,
+            "description": "即使未达标也强制返回的最小结果数"
+          },
+          "enable_auto_adjust": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否根据结果分布自动调整阈值"
+          }
+        },
+        "graph": {
+          "sparse_matrix_format": {
+            "type": "string",
+            "default": "csr",
+            "enum": [
+              "csr",
+              "csc"
+            ],
+            "description": "稀疏矩阵存储格式"
+          }
+        },
+        "web": {
+          "enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否启用可视化编辑服务器"
+          },
+          "port": {
+            "type": "integer",
+            "default": 8082,
+            "description": "服务器端口"
+          },
+          "host": {
+            "type": "string",
+            "default": "0.0.0.0",
+            "description": "服务器绑定地址"
+          }
+        },
+        "advanced": {
+          "enable_auto_save": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用自动保存（原子化统一持久化）"
+          },
+          "auto_save_interval_minutes": {
+            "type": "integer",
+            "default": 5,
+            "description": "自动保存间隔（分钟）"
+          },
+          "debug": {
+            "type": "boolean",
+            "default": false,
+            "description": "启用详细调试日志"
+          },
+          "extraction_model": {
+            "type": "string",
+            "default": "auto",
+            "description": "指定知识抽取模型名称 (对应 model_config.toml 中的 name)"
+          }
+        },
+        "summarization": {
+          "enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否启用总结导入功能"
+          },
+          "model_name": {
+            "type": "string",
+            "default": "auto",
+            "description": "总结使用的模型名称"
+          },
+          "context_length": {
+            "type": "integer",
+            "default": 50,
+            "description": "总结消息的上下文条数"
+          },
+          "include_personality": {
+            "type": "boolean",
+            "default": true,
+            "description": "总结提示词是否包含机器人人设"
+          },
+          "default_knowledge_type": {
+            "type": "string",
+            "default": "narrative",
+            "enum": [
+              "narrative",
+              "factual",
+              "structured"
+            ],
+            "description": "总结导入时的默认知识类型"
+          }
+        },
+        "schedule": {
+          "enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否启用定时自动导入"
+          },
+          "import_times": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "04:00"
+            ],
+            "description": "每日自动导入的时间点列表 (24小时制)"
+          }
+        },
+        "filter": {
+          "enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "是否启用聊天流过滤"
+          },
+          "mode": {
+            "type": "string",
+            "default": "whitelist",
+            "enum": [
+              "whitelist",
+              "blacklist"
+            ],
+            "description": "过滤模式：whitelist(白名单) 或 blacklist(黑名单)"
+          },
+          "chats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [],
+            "description": "聊天流 ID 列表。支持填写: 1. 群号 (group_id); 2. 私聊用户ID (user_id); 3. 聊天流唯一标识 (stream_id, MD5格式)。"
+          }
+        }
+      },
+      "dependencies": {
+        "required": [
+          "numpy>=1.20.0",
+          "scipy>=1.7.0",
+          "nest-asyncio>=1.5.0",
+          "faiss-cpu>=1.7.0",
+          "fastapi>=0.100.0",
+          "uvicorn>=0.20.0",
+          "pydantic>=2.0.0"
+        ],
+        "optional": []
+      },
+      "id": "A_Dawn.A_memorix"
+    }
+  },
+  {
+    "id": "wentaoxian6-svg.MaiBot-rule_horror_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "规则怪谈插件",
+      "version": "1.5",
+      "description": "生成规则怪谈并进行互动游戏，支持LLM生成、提示、推理和多种结局判定",
+      "author": {
+        "name": "岚影鸿夜",
+        "url": "https://github.com/wentaoxian6-svg"
+      },
+      "license": "MIT",
+      "homepage_url": "https://github.com/wentaoxian6-svg/MaiBot-rule_horror_plugin",
+      "repository_url": "https://github.com/wentaoxian6-svg/MaiBot-rule_horror_plugin",
+      "host_application": {
+        "min_version": "0.12.2"
+      },
+      "keywords": [
+        "规则怪谈",
+        "游戏",
+        "LLM",
+        "互动",
+        "推理"
+      ],
+      "categories": [
+        "Entertainment & Interaction",
+        "Content Generation"
+      ],
+      "id": "wentaoxian6-svg.MaiBot-rule_horror_plugin"
+    }
+  },
+  {
+    "id": "FoolOyster.mai-video-plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "视频生成插件(mai-video-plugin)",
+      "version": "0.1.0",
+      "description": "兼容 多种视频生成模型 API 的麦麦视频生成插件，支持文生视频与图生视频，仅支持QQ平台",
+      "author": {
+        "name": "Fooloyster",
+        "url": "https://github.com/FoolOyster/mai-video-plugin"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.10.0"
+      },
+      "homepage_url": "https://github.com/FoolOyster/mai-video-plugin",
+      "repository_url": "https://github.com/FoolOyster/mai-video-plugin",
+      "keywords": [
+        "video",
+        "ai",
+        "multimedia"
+      ],
+      "categories": [
+        "Video",
+        "Multimedia",
+        "Entertainment"
+      ],
+      "default_locale": "CN",
+      "locales_path": "_locales"
+    }
+  },
+  {
+    "id": "HyperSharkawa.msg_react_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "麦麦贴表情插件",
+      "version": "1.0.0",
+      "description": "让麦麦能在群聊中贴表情",
+      "author": {
+        "name": "鲨鱼",
+        "url": "https://github.com/HyperSharkawa"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.6"
+      },
+      "homepage_url": "https://github.com/HyperSharkawa/maibot-msg-react-plugin",
+      "repository_url": "https://github.com/HyperSharkawa/maibot-msg-react-plugin",
+      "keywords": [
+        "贴表情",
+        "群组",
+        "互动"
+      ],
+      "categories": [
+        "Entertainment & Interaction"
+      ],
+      "default_locale": "zh-CN",
       "locales_path": "_locales"
     }
   }
