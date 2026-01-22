@@ -6524,5 +6524,74 @@
       "default_locale": "zh-CN",
       "locales_path": "_locales"
     }
+  },
+  {
+    "id": "sansenjian.quick_date_perception",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "quick_date_perception",
+      "display_name": "快速日期感知",
+      "version": "1.0.0",
+      "description": "轻量级日期感知插件，为麦麦提供时间、日期、节假日、农历、节气等环境感知能力。支持多数据源降级策略，在依赖库缺失时优雅降级。",
+      "author": {
+        "name": "sansenjian",
+        "url": "https://github.com/sansenjian/quick-date-perception"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.7.0"
+      },
+      "entry": "plugin.py",
+      "homepage_url": "https://github.com/sansenjian/quick-date-perception",
+      "repository_url": "https://github.com/sansenjian/quick-date-perception",
+      "keywords": [
+        "date",
+        "time",
+        "日期",
+        "时间",
+        "节假日",
+        "农历",
+        "节气",
+        "感知"
+      ],
+      "categories": [
+        "Utility Tools"
+      ],
+      "default_locale": "zh-CN",
+      "plugin_info": {
+        "is_built_in": false,
+        "plugin_type": "utility",
+        "components": [
+          {
+            "type": "handler",
+            "name": "DateInjectEventHandler",
+            "description": "日期注入事件处理器，自动注入日期信息到 LLM Prompt"
+          },
+          {
+            "type": "tool",
+            "name": "DateTool",
+            "description": "日期查询工具，供 LLM 主动调用"
+          },
+          {
+            "type": "command",
+            "name": "DateCommand",
+            "description": "日期查询命令，用户可通过 /date 命令查询"
+          }
+        ],
+        "features": [
+          "时区感知的日期时间获取",
+          "星期和时间段识别",
+          "节假日和调休识别",
+          "农历日期转换",
+          "二十四节气计算",
+          "LLM Prompt 自动注入",
+          "Tool 工具接口",
+          "Command 命令接口",
+          "LLM 自然语言扩展",
+          "优雅降级机制"
+        ]
+      },
+      "id": "sansenjian.quick_date_perception"
+    }
   }
 ]
