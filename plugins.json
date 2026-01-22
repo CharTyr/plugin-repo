@@ -462,6 +462,10 @@
   {
     "id": "sansenjian.quick_date_perception",
     "repositoryUrl": "https://github.com/sansenjian/quick-date-perception"
+  },
+  {
+    "id": "yueshenqiu.video_generator_plugin",
+    "repositoryUrl": "https://github.com/yueshenqiu/video_generator_plugin"
   }
 ]
 
