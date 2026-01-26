@@ -1752,17 +1752,19 @@
     "id": "whitefox20011120.bilibili_dynamic_push_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "bilibili_dynamic_push",
-      "version": "1.0.0",
-      "description": "基于MaiBot的B站动态订阅插件，支持多UP主、多群组推送，自动解析图文、视频封面及转发动态",
+      "name": "B站动态推送",
+      "version": "1.5.0",
+      "description": "适用于MaiBot的B站动态订阅插件，支持多UP主、多群组推送，自动解析图文、视频封面及转发动态",
       "author": {
         "name": "白狐",
-        "url": ""
+        "url": "https://github.com/whitefox20011120"
       },
       "license": "MIT",
       "host_application": {
         "min_version": "0.10.0"
       },
+      "homepage_url": "https://github.com/whitefox20011120/bilibili_dynamic_push_plugin",
+      "repository_url": "",
       "keywords": [
         "bilibili",
         "动态订阅",
@@ -1775,7 +1777,6 @@
         "entertainment",
         "utility"
       ],
-      "repository_url": "",
       "default_locale": "zh-CN",
       "plugin_info": {
         "is_built_in": false,
@@ -2826,7 +2827,7 @@
     "manifest": {
       "manifest_version": 1,
       "name": "Gemini 绘图",
-      "version": "1.7.6",
+      "version": "1.7.8",
       "description": "使用 Google Gemini API或着其他第三方平台提供的绘图服务，根据图片和提示词生成新图片。（现已支持视频生成）",
       "author": {
         "name": "sakura桜花",
@@ -5457,7 +5458,7 @@
       "manifest_version": 1,
       "name": "quick_poke",
       "display_name": "简单的戳一戳插件",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "description": "MaiBot 戳一戳插件，支持自动回戳、LLM 文字回复、跟戳功能，可配置触发概率。",
       "author": {
         "name": "sansenjian",
@@ -5576,25 +5577,30 @@
     "id": "nguspring.custom_pic_plugin",
     "manifest": {
       "manifest_version": 1,
-      "name": "自定义智能多模型图片生成插件（custom_pic_plugin）",
-      "version": "3.4.1",
-      "description": "智能多模型图片生成插件，支持文生图和图生图自动识别。兼容OpenAI、豆包、Gemini、魔搭等多种API格式。提供命令式风格转换、模型配置管理、结果缓存等功能。支持动态模型切换、风格别名、调试开关、智能参考搜索（内置搜索引擎）等高级特性。内置7个魔搭模型预设。本插件完全符合 MaiBot 插件开发标准。",
+      "name": "画家麦麦的自拍日常",
+      "version": "3.5.1",
+      "description": "画家麦麦的自拍日常 - 集智能绘画与自拍生成于一体的 MaiBot 插件。🎨 画图功能：支持文生图/图生图智能识别，兼容 OpenAI、豆包、Gemini、魔搭等多种 API，命令式风格转换，内置 7 个魔搭模型预设。📸 自拍功能：智能日程规划，动态场景描述，自动配文生成，支持自定义人设注入让配文更符合角色设定。提供动态模型切换、风格别名、结果缓存、智能参考搜索（内置 Bing 搜图）等高级特性。完全符合 MaiBot 插件开发标准。",
       "author": {
         "name": "Ptrel，Rabbit-Jia-Er，saberlights Kiuon，nguspring",
-        "url": "https://github.com/nguspring/custom_pic_plugin"
+        "url": "https://github.com/nguspring/selfie_painter"
       },
       "license": "AGPL-3.0",
       "host_application": {
         "min_version": "0.10.0"
       },
-      "homepage_url": "https://github.com/nguspring/custom_pic_plugin",
-      "repository_url": "https://github.com/nguspring/custom_pic_plugin",
+      "homepage_url": "https://github.com/nguspring/selfie_painter",
+      "repository_url": "https://github.com/nguspring/selfie_painter",
       "keywords": [
         "画图",
-        "表情",
+        "自拍",
+        "日程",
+        "配文",
         "AI",
         "图片",
-        "魔搭"
+        "魔搭",
+        "文生图",
+        "图生图",
+        "人设"
       ],
       "categories": [
         "Content Generation",
@@ -5609,7 +5615,7 @@
           {
             "type": "action",
             "name": "draw_picture",
-            "description": "智能图片生成，自动��别文生图/图生图",
+            "description": "智能图片生成，自动识别文生图/图生图",
             "activation_modes": [
               "keyword",
               "llm_judge"
@@ -6644,6 +6650,37 @@
           }
         ]
       }
+    }
+  },
+  {
+    "id": "Rxiain.a1ctf_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "A1CTF平台群通知插件",
+      "version": "1.0.0",
+      "description": "监控A1CTF平台的公告与解题情况，解题情况播报LLM润色等",
+      "author": {
+        "name": "orxiain",
+        "url": "https://github.com/Rxiain"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.6"
+      },
+      "homepage_url": "https://github.com/Rxiain/a1ctf_plugin",
+      "repository_url": "https://github.com/Rxiain/a1ctf_plugin",
+      "keywords": [
+        "A1CTF",
+        "CTF",
+        "notification",
+        "LLM",
+        "monitoring"
+      ],
+      "categories": [
+        "External Integration"
+      ],
+      "default_locale": "zh-CN",
+      "id": "orxiain.a1ctf_plugin"
     }
   }
 ]
