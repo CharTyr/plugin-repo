@@ -6651,5 +6651,36 @@
         ]
       }
     }
+  },
+  {
+    "id": "Rxiain.a1ctf_plugin",
+    "manifest": {
+      "manifest_version": 1,
+      "name": "A1CTF平台群通知插件",
+      "version": "1.0.0",
+      "description": "监控A1CTF平台的公告与解题情况，解题情况播报LLM润色等",
+      "author": {
+        "name": "orxiain",
+        "url": "https://github.com/Rxiain"
+      },
+      "license": "MIT",
+      "host_application": {
+        "min_version": "0.11.6"
+      },
+      "homepage_url": "https://github.com/Rxiain/a1ctf_plugin",
+      "repository_url": "https://github.com/Rxiain/a1ctf_plugin",
+      "keywords": [
+        "A1CTF",
+        "CTF",
+        "notification",
+        "LLM",
+        "monitoring"
+      ],
+      "categories": [
+        "External Integration"
+      ],
+      "default_locale": "zh-CN",
+      "id": "orxiain.a1ctf_plugin"
+    }
   }
 ]
